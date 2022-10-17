@@ -1,0 +1,128 @@
+.card{
+    width: fit-content;
+    height: fit-content;
+    margin: 1.5px;
+}
+.values{
+    display: none;
+}
+span{ 
+    display: block; 
+}
+.num{
+    margin: 0 2px 1px 3px;
+}
+.outline{ 
+    width: 110px;
+    height: 155px;
+    border: 0px solid black; 
+    text-align: center; 
+    padding: 10px; 
+    margin: 0px; 
+    background: #FFF; 
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(0);
+}
+.top{ 
+    text-align: left; 
+}
+.bottom{ 
+    text-align: right; 
+}
+.shadow{ 
+    box-shadow: 1.5px 1.5px 5px #000; 
+    -moz-box-shadow: 1.5px 1.5px 5px #000; 
+    -webkit-box-shadow: 1.5px 1.5px 5px #000; 
+}
+.rounded{ 
+    border-radius:10px; 
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.fliper{
+    transition-duration: 2s;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.backface{
+    transform: rotateY(180deg);
+    background-image: url(./../img/backface.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 150px; 
+    padding: 10px; 
+    position: absolute;
+    backface-visibility: hidden;
+    /*margin: 10px; */
+}
+/*.fliper:hover{
+    transform: rotateY(0);
+}*/
+.turned .backface{
+    transform: rotateY(0);
+}
+.turned .outline{
+    transform: rotateY(180deg);
+}
+.toplayercard, .tocomputercard, .from, .fromcomputertocomputerbin,
+.fromcomputertoplayerbin, .fromplayertocomputerbin{
+    position: absolute;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+/*to computer card places from the decks*/
+.tocomputercard{
+    animation-name: toComputerCard;
+}
+@keyframes toComputerCard{
+    from{top: 18px; left: 29.5%;}
+    to{top: 210px; left: 47%;}
+}
+/*to player card places from the decks*/
+.toplayercard{
+    animation-name: toPlayerCard;
+}
+@keyframes toPlayerCard{
+    from{bottom: 184px; right: 35.6%;}
+    to{bottom: 382px; right: 53%;}
+}
+
+
+/*to player bin from player cards*/
+.from{
+    animation-name: from;
+}
+@keyframes from{
+    from{bottom: 382px; right: 53%;}
+    to{bottom: 184px; right: 70.5%;}
+}
+/*to player bin from computer cards*/
+.fromcomputertoplayerbin{
+    animation-name: fromComputerToPlayerBin;
+}
+@keyframes fromComputerToPlayerBin{
+    from{top: 210px; left: 46.8%;}
+    to{top: 590px; left: 29.1%;}
+}
+
+
+/*to player bin from computer cards*/
+.fromplayertocomputerbin{
+    animation-name: fromPlayerToPlayerBin;
+}
+@keyframes fromComputerToComputerBin{
+    from{top: 207px; left: 46.8%;}
+    to{top: 10px; left: 64.5%;}
+}
+/*to computer bin from computer cards*/
+.fromcomputertocomputerbin{
+    animation-name: fromComputerToComputerBin;
+}
+@keyframes fromPlayerToPlayerBin{
+    from{top: 395px; left: 46.75%;}
+    to{top: 10px; left: 64.5%;}
+}

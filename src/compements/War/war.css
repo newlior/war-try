@@ -1,0 +1,32 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 110%;
+    padding: 10px 0;
+}
+.deck-place{
+    border: 3px solid white;
+    width: 118px;
+    height: 166px;
+    background-image: url(./../img/empty.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 3px;
+    overflow: hidden;
+}
+.bigger{
+    width: 130px;
+    height: 173px;
+    margin: 15px auto;
+}
+.bigger .card{
+    margin: 3px;
+}
+.board{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
